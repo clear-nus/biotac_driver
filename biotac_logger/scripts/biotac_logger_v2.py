@@ -206,7 +206,7 @@ class BioTacListener:
 
   def check_against_calibration(self, data):
     for biotac_idx in range(self.n_biotacs):
-      if data.bt_data[biotac_idx].pdc_data > (self.confirmed_pdc_mu[biotac_idx] + 50*self.confirmed_pdc_var[biotac_idx]**0.5) or data.bt_data[biotac_idx].pdc_data < (self.confirmed_pdc_mu[biotac_idx] - 50*self.confirmed_pdc_var[biotac_idx]**0.5):
+      if data.bt_data[biotac_idx].pdc_data > (self.confirmed_pdc_mu[biotac_idx] + 50*self.confirmed_pdc_var[biotac_idx]**0.5):
         self.touch_counter[biotac_idx] += 1
         if self.touch_counter[biotac_idx] >= self.touch_threshold:
           weights = np.expand_dims(self.compute_weights(data, biotac_idx),axis = 0)
