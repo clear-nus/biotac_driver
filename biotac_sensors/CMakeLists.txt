@@ -17,6 +17,8 @@ add_message_files(
     BioTacData.msg
     BioTacHand.msg
     BioTacTime.msg
+    SignedBioTacData.msg
+    SignedBioTacHand.msg
 )
 
 generate_messages(
